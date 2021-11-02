@@ -1,0 +1,384 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <title>Allocate</title>
+    
+</head>
+<body class="antialiased bg-gradient-to-b from-blue-100 to-white">
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+            <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-14" src="assets/img/allocate-logo.svg" alt="">
+            </a>
+            </div>
+            <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+                Sign in
+            </a>
+            <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-full shadow-lg text-base font-medium text-white bg-gradient-to-r from-blue-500 to-purple-700 hover:bg-purple-900">
+                Sign up
+            </a>
+            <!-- Profile dropdown -->
+            <div class="ml-3 relative" x-data="{ open: false }">
+                <div>
+                <button type="button" class="relative z-10 flex items-center p-2 border border-gray-400 rounded-md focus:outline-none text-sm" id="user-menu-button" @click="open = true">
+                    <span class="sr-only">Open user menu</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                </div>
+                <!-- Dropdown menu, show/hide based on menu state. -->
+                <div class="origin-top-right absolute right-0 z-20 w-64 py-2 mt-2 bg-white rounded-md shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none" x-show="open" @click.outside="open = false">
+                    <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100;">
+                        Expert -built Portfolios
+                    </a>
+                    <hr class="border-gray-200">
+                    <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100;">
+                        Spotlight opportunities
+                    </a>
+                    <hr class="border-gray-200">
+                    <a href="#" class="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform hover:bg-gray-100;">
+                        Build your own Portfolio
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    
+        <!--
+        Mobile menu, show/hide based on mobile menu state.
+        -->
+        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+            <div class="pt-5 pb-6 px-5">
+            <div class="flex items-center justify-between">
+                <div>
+                <img class="h-8 w-auto" src="assets/img/allocate-logo-icon.svg" alt="Workflow">
+                </div>
+                <div class="-mr-2">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span class="sr-only">Close menu</span>
+                    <!-- Heroicon name: outline/x -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                </div>
+            </div>
+            </div>
+            <div class="py-6 px-5 space-y-6">
+            <div>
+                <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                Sign up
+                </a>
+                <p class="mt-6 text-center text-base font-medium text-gray-500">
+                Existing customer?
+                <a href="#" class="text-indigo-600 hover:text-indigo-500">
+                    Sign in
+                </a>
+                </p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+        <section class="relative z-10 pb-8">
+
+    
+            <main class="w-full px-4 sm:px-6 lg:px-8">
+                <div class="w-full">
+                    <div class="carousel" data-gap="20" data-bfc>
+                        <figure>
+                        <img src="assets/img/card-1.svg" alt="">
+                        <img src="assets/img/card-2.svg" alt="">
+                        <img src="assets/img/card-3.svg" alt="">
+                        <img src="assets/img/card-4.svg" alt="">
+                        <img src="assets/img/card-1.svg" alt="">
+                        <img src="assets/img/card-2.svg" alt="">
+                        <img src="assets/img/card-3.svg" alt="">
+                        <img src="assets/img/card-4.svg" alt="">
+                        </figure>
+                        <div class="absolute w-full left-0 top-48 ">
+                            <nav class="flex justify-between items-center">
+                                <button class="nav prev">
+                                    &#8592
+                                </button>
+                                <button class="nav next">
+                                    &#8594
+                                </button>
+                            </nav>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            <div class="text-center w-full xl:w-7xl mx-auto px-8 xl:px-28">
+                <h1 class="text-3xl tracking-tight font-bold text-gray-900 sm:text-4xl md:text-4xl">
+                <span class="block text-indigo-600 sm:inline">Allocate</span>
+                <span class="block sm:inline">gives you access to</span>
+                <span class="block text-indigo-600 sm:inline">curated investment opportunities</span>
+                <span class="block sm:inline">and exclusive</span>
+                <span class="block text-indigo-600 sm:inline">wealth management advice</span>
+
+                </h1>
+                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+                <div class="rounded-full shadow-lg">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-700 hover:bg-purple-900 md:py-4 md:text-lg md:px-10">
+                        Explore recommended portfolios
+                    </a>
+                </div>
+                </div>
+            </div>
+            </main>
+        </section>
+        <section class="w-full px-8 py-16">
+            <div class="text-center pb-8">
+                <h2 class="text-3xl tracking-tight font-bold text-gray-900 sm:text-4xl md:text-4xl mt-12 mb-6">Uncomplicate Your Investments</h2>
+            </div>
+            <div class="grid grid-cols-3">
+                <div class="p-8 bg-white rounded-xl shadow-lg text-center m-4">
+                    <img class="w-1/4 mx-auto py-12" src="assets/img/progressive-investment.svg">
+                    <h3 class="text-xl tracking-tight font-bold text-gray-900 sm:text-xl py-2">Progressive Investments</h3>
+                    <p class="text-base">Experience led – Filtered Ideas – for emerging trends – in Portfolio Investing</p>
+
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-lg text-center m-4">
+                    <img class="w-1/4 mx-auto py-12" src="assets/img/data-driven-choices.svg">
+                    <h3 class="text-xl tracking-tight font-bold text-gray-900 sm:text-xl py-2">Data Driven Choices</h3>
+                    <p class="text-base">Make informed decisions - using our smart tools</p>
+
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-lg text-center m-4">
+                    <img class="w-1/4 mx-auto py-12" src="assets/img/advisor-validation.svg">
+                    <h3 class="text-xl tracking-tight font-bold text-gray-900 sm:text-xl py-2">Advisor Validation</h3>
+                    <p class="text-base">Unbiased Advice – on Optimum Allocations – by India’s finest Portfolio Advisors</p>
+
+                </div>
+            </div>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+                <div class="rounded-full shadow-lg">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-700 hover:bg-purple-900 md:py-4 md:text-lg md:px-10">
+                        Explore recommended portfolios
+                    </a>
+                </div>
+            </div>
+
+        </section>
+        <section class="w-full py-16">
+            <h2 class="text-3xl tracking-tight font-bold text-gray-900 sm:text-4xl md:text-4xl mt-12 mb-6 text-center pb-8">Dynamic Growth Chart</h2>
+            <div class="grid grid-cols-6">
+                <div class="col-span-2 px-4">
+                    <p class="text-xl font-bold">Magic Portfolios</p>
+                    <div class="w-full flex flex-col space-y-6 py-6">
+                        <div class="bg-blue-900 rounded-xl shadow-lg p-6 border-4 border-green-400">
+                            <h4 class="text-2xl text-white">All-rounder Portfolio</h4>
+                            <div class="grid grid-cols-2">
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">3Y CAGR</p>
+                                    <p class="text-2xl font-bold text-green-300">11%</p>
+                                </div>
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">Min Investment</p>
+                                    <p class="text-2xl font-bold text-green-300">₹60,000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-300 rounded-xl shadow-lg p-6">
+                            <h4 class="text-2xl text-white">Belly-for-risk Portfolio</h4>
+                            <div class="grid grid-cols-2">
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">3Y CAGR</p>
+                                    <p class="text-2xl font-bold text-green-300">19%</p>
+                                </div>
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">Min Investment</p>
+                                    <p class="text-2xl font-bold text-green-300">₹80,000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-300 rounded-xl shadow-lg p-6">
+                            <h4 class="text-2xl text-white">Limit-my-risk Portfolio</h4>
+                            <div class="grid grid-cols-2">
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">3Y CAGR</p>
+                                    <p class="text-2xl font-bold text-green-300">7.5%</p>
+                                </div>
+                                <div class="pt-4">
+                                    <p class="text-base text-gray-200">Min Investment</p>
+                                    <p class="text-2xl font-bold text-green-300">₹50,000</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-span-4 px-4">
+                    <p class="text-xl font-bold">All-rounder Portfolio</p>
+                    <div class="w-full bg-white rounded-xl shadow-lg min-h-48 p-8 mt-6">
+                        <div class="grid grid-cols-3 space-x-4">
+                            <div class="border-b-8 border-indigo-700 pb-4">
+                                <p class="text-sm text-grey-500">Your Investment</p>
+                                <p class="text-4xl text-grey-200 pt-2">₹10,000</p>
+                            </div>
+                            <div class="border-b-8 border-grey-200 pb-4">
+                                <p class="text-sm text-grey-500">Benchmark Returns</p>
+                                <p class="text-4xl text-grey-5200 pt-2">₹25,000</p>
+                            </div>
+                            <div class="border-b-8 border-green-400 pb-4">
+                                <p class="text-sm text-grey-500">All-rounder Portfolio Returns</p>
+                                <p class="text-4xl text-grey-200 pt-2">₹31,000</p>
+                            </div>
+                        </div>
+                        <div class="py-4">
+                            <img class="w-1/2 mt-32" src="assets/img/graph.svg">
+                        </div>
+                        <div class="py-4">
+                            <div class="w-full">
+                                <div class="bg-gray-300 h-2 w-full rounded-full relative">
+                                  <span class="bg-white h-4 w-4 absolute top-0 -ml-2 -mt-1 z-10 shadow rounded-full cursor-pointer" style="left:50%"></span>
+                                  <span class="bg-green-300 h-2 absolute left-0 top-0 rounded-full" style="width:50%"></span>
+                                </div>
+                                <div class="flex justify-between mt-2 text-xs text-gray-600">
+                                  <span class="w-8 text-left">Start</span>
+
+                                  <span class="w-8 text-center">Today</span>
+
+                                  <span class="w-8 text-right">2030</span>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section class="w-full py-24">
+            <h2 class="text-3xl tracking-tight font-bold text-gray-900 sm:text-4xl md:text-4xl mt-12 mb-6 text-center">Get access to curated Ideas and build your own portfolio</h2>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-center">
+                <div class="rounded-full shadow-lg">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-700 hover:bg-purple-900 md:py-4 md:text-lg md:px-10">
+                        Explore recommended portfolios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        </div>
+        <footer class="bg-gray-900 text-center text-white p-12">
+            <p class="text-sm">Copyright © 2021 Allocate. All rights reserved.</p>
+
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+	var
+		carousels = document.querySelectorAll('.carousel')
+	;
+
+	for (var i = 0; i < carousels.length; i++) {
+		carousel(carousels[i]);
+	}
+});
+
+function carousel(root) {
+	var
+		figure = root.querySelector('figure'),
+		nav = root.querySelector('nav'),
+		images = figure.children,
+		n = images.length,
+		gap = root.dataset.gap || 0,
+		bfc = 'bfc' in root.dataset,
+		
+		theta =  2 * Math.PI / n,
+		currImage = 0
+	;
+	
+	setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+	window.addEventListener('resize', () => { 
+		setupCarousel(n, parseFloat(getComputedStyle(images[0]).width)) 
+	});
+
+	setupNavigation();
+
+	function setupCarousel(n, s) {
+		var	
+			apothem = s / (2 * Math.tan(Math.PI / n))
+		;
+		
+		figure.style.transformOrigin = `50% 50% ${- apothem}px`;
+
+		for (var i = 0; i < n; i++)
+			images[i].style.padding = `${gap}px`;
+		for (i = 1; i < n; i++) {
+			images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+			images[i].style.transform = `rotateY(${i * theta}rad)`;
+		}
+		if (bfc)
+			for (i = 0; i < n; i++)
+				 images[i].style.backfaceVisibility = 'hidden';
+		
+		rotateCarousel(currImage);
+	}
+
+	function setupNavigation() {
+		nav.addEventListener('click', onClick, true);
+		
+		function onClick(e) {
+			e.stopPropagation();
+			
+			var t = e.target;
+			if (t.tagName.toUpperCase() != 'BUTTON')
+				return;
+			
+			if (t.classList.contains('next')) {
+				currImage++;
+			}
+			else {
+				currImage--;
+			}
+			
+			rotateCarousel(currImage);
+		}
+			
+	}
+
+	function rotateCarousel(imageIndex) {
+		figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+	}
+	
+}
+        
+        
+        
+        </script>    
+    
+</body>
+</html>
